@@ -1,3 +1,4 @@
 #!/bin/bash
+cd ~/Docs/Talks/CTC2013
 python -m SimpleHTTPServer 8001 &
 open present_via_localhost.html
