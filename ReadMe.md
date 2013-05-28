@@ -1,7 +1,6 @@
-Talk: &ldquo;Interactive graphics for high-dimensional genetic data&rdquo;
-----------------------------------------------------------------------
+### Talk: &ldquo;Interactive graphics for high-dimensional genetic data&rdquo;
 
-See it in action [here](http://www.biostat.wisc.edu/~kbroman/talks/InteractiveGraphs4).
+See it in action [here](http://www.biostat.wisc.edu/~kbroman/talks/ctc2013).
 
 These are slides for a talk I will give at the [Complex Trait Community
 meeting](http://rqtl.org/ctc2013.org) in Madison, Wisconsin, on 31 May 2013.
