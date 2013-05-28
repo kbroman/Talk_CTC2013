@@ -47,7 +47,7 @@ draw = (data) ->
 
   # Size of rectangles in top-left panel
   peakRad = 2
-  bigRad = 5
+  bigRad = 4
 
   # gap between chromosomes in lower plot
   chrGap = 8
@@ -332,7 +332,7 @@ draw = (data) ->
          .attr("x1", left[1])
          .attr("x2", right[1])
          .attr("stroke", "white")
-         .attr("stroke-width", "1")
+         .attr("stroke-width", "2")
     yaxis.selectAll("empty")
          .data(ticks)
          .enter()
@@ -349,8 +349,8 @@ draw = (data) ->
          .attr("x1", left[1])
          .attr("x2", right[1])
          .attr("stroke", purple)
-         .attr("stroke-width", "1")
-         .attr("stroke-dasharray", "2,2")
+         .attr("stroke-width", "2")
+         .attr("stroke-dasharray", "3,3")
 
     # lod curves by chr
     lodcurve = (c) ->
@@ -436,7 +436,7 @@ draw = (data) ->
        .attr("r", bigRad)
        .attr("fill", purple)
        .attr("stroke", "none")
-       .attr("stroke-width", "2")
+       .attr("stroke-width", "1")
        .attr("opacity", 0)
        .on("mouseover", (td) ->
               d3.select(this).attr("opacity", 1) unless markerClick[td]
@@ -471,7 +471,7 @@ draw = (data) ->
               .attr("x2", (d,i) -> return if(chr is "X") then pxgXscaleX(i) else pxgXscaleA(i))
               .attr("stroke", darkGray)
               .attr("fill", "none")
-              .attr("stroke-width", "1")
+              .attr("stroke-width", "2")
       pxgXaxis.selectAll("line.PXGvert")
               .data(means)
               .transition().duration(fasttime)
@@ -564,7 +564,7 @@ draw = (data) ->
          .attr("x1", left[2])
          .attr("x2", right[2])
          .attr("stroke", "white")
-         .attr("stroke-width", "1")
+         .attr("stroke-width", "2")
       pxgYaxis.selectAll("empty")
          .data(pxgticks)
          .enter()

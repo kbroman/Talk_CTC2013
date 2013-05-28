@@ -303,3 +303,7 @@ ul ul.nodash {
 ul ul.nodash li:before {  
   content: "";
 }
+
+svg line {
+  shape-rendering: crispEdges;
+}
