@@ -8,3 +8,5 @@ meeting](http://rqtl.org/ctc2013) in Madison, Wisconsin, on 31 May 2013.
 The slides were tested for Safari on a Mac and might look terrible in
 some browsers. I have a lot more to learn about handling browser
 differences.
+
+[![CC BY](http://i.creativecommons.org/l/by/3.0/88x31.png)](http://creativecommons.org/licenses/by/3.0/)
