@@ -8,7 +8,7 @@ d3.json "data/corr_w_scatter.json", (data) ->
   # dimensions of SVG
   h = 450
   w = h
-  pad = {left:70, top:40, right:5, bottom: 70}
+  pad = {left:70, top:40, right:15, bottom: 70}
   innerPad = 5
 
   totalh = h + pad.top + pad.bottom
