@@ -1,9 +1,12 @@
 mainstuff: js presentation.html figs/manyboxplots.png figs/manyboxplots_oldschool.png figs/intercross.png
 
-js: js/manyboxplots.js js/lod_and_effect.js js/cistrans.js
+js: js/manyboxplots.js js/lod_and_effect.js js/cistrans.js js/corr_w_scatter.js
 
 js/manyboxplots.js: coffee/manyboxplots.coffee
 	coffee -co js coffee/manyboxplots.coffee
+
+js/corr_w_scatter.js: coffee/corr_w_scatter.coffee
+	coffee -co js coffee/corr_w_scatter.coffee
 
 js/lod_and_effect.js: coffee/lod_and_effect.coffee
 	coffee -co js coffee/lod_and_effect.coffee
@@ -34,7 +37,7 @@ webcode:
 	scp coffee/*.coffee broman-2:public_html/presentations/CTC2013/coffee/
 
 webdata:
-	scp data/hypo.json data/insulinlod.json broman-2:public_html/presentations/CTC2013/data/
+	scp data/hypo.json data/insulinlod.json data/corr_w_scatter.json broman-2:public_html/presentations/CTC2013/data/
 
 webfigs:
 	scp figs/*.png broman-2:public_html/presentations/CTC2013/figs/
