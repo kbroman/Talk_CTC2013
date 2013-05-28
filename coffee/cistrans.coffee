@@ -303,7 +303,7 @@ draw = (data) ->
   draw_probe = (probe_data) ->
     # delete all related stuff
     svg.selectAll(".probe_data").remove()
-    d3.select("text#pxgtitle").text("")
+    svg.select("text#pxgtitle").text("")
     svg.selectAll(".plotPXG").remove()
 
     # find marker with maximum LOD score
@@ -448,12 +448,12 @@ draw = (data) ->
               pos = data.pmark[td].pos_cM
               chr = data.pmark[td].chr
               title = "#{td} (chr #{chr}, #{onedig(pos)} cM)"
-              d3.select("text#pxgtitle").text(title)
+              svg.select("text#pxgtitle").text(title)
               if lastMarker is ""
                   plotPXG td
               else
                   markerClick[lastMarker] = 0
-                  d3.select("circle#marker_#{lastMarker}").attr("opacity", 0).attr("fill",purple).attr("stroke","none")
+                  svg.select("circle#marker_#{lastMarker}").attr("opacity", 0).attr("fill",purple).attr("stroke","none")
                   revPXG td
               lastMarker = td
               markerClick[td] = 1
@@ -530,7 +530,7 @@ draw = (data) ->
          .attr("stroke", (d,i) -> return if male[i] then darkblue else darkred)
          .attr("stroke-width", 4)
          .on("mouseover", efftip)
-         .on("mouseout", -> d3.selectAll("#efftip").remove())
+         .on("mouseout", -> svg.selectAll("#efftip").remove())
       meanmarks.selectAll("line.PXGmeans")
          .data(means)
          .transition().duration(slowtime)
@@ -633,7 +633,7 @@ draw = (data) ->
                d3.select(this).attr("r", bigRad)
                indtip.call(this, d, i)
           .on "mouseout", ->
-               d3.selectAll("#indtip").remove()
+               svg.selectAll("#indtip").remove()
                d3.select(this).attr("r", peakRad)
 
 
@@ -692,11 +692,11 @@ draw = (data) ->
     # initially select the marker with maximum LOD
     lastMarker = maxlod_marker
     markerClick[lastMarker] = 1
-    d3.select("circle#marker_#{lastMarker}").attr("opacity", 1).attr("fill",altpink).attr("stroke",purple)
+    svg.select("circle#marker_#{lastMarker}").attr("opacity", 1).attr("fill",altpink).attr("stroke",purple)
     pos = data.pmark[lastMarker].pos_cM
     chr = data.pmark[lastMarker].chr
     title = "#{lastMarker} (chr #{chr}, #{onedig(pos)} cM)"
-    d3.select("text#pxgtitle").text(title)
+    svg.select("text#pxgtitle").text(title)
     plotPXG(lastMarker)
 
   chrindex = {}
@@ -717,7 +717,7 @@ draw = (data) ->
              .attr("fill", (d) -> return if(chrindex[d.chr] % 2 is 0) then darkblue else darkgreen)
              .attr("opacity", (d) -> Zscale(d.lod))
              .on "mouseover", (d) ->
-                 d3.selectAll("circle.probe_#{d.probe}")
+                 svg.selectAll("circle.probe_#{d.probe}")
                                 .attr("r", bigRad)
                                 .attr("fill", pink)
                                 .attr("stroke", darkblue)
@@ -725,12 +725,12 @@ draw = (data) ->
                                 .attr("opacity", 1)
                  eqtltip.call(this,d)
              .on "mouseout", (d) ->
-                 d3.selectAll("circle.probe_#{d.probe}")
+                 svg.selectAll("circle.probe_#{d.probe}")
                                 .attr("r", peakRad)
                                 .attr("fill", (d) -> return if(chrindex[d.chr] % 2 is 0) then darkblue else darkgreen)
                                 .attr("stroke", "none")
                                 .attr("opacity", (d) -> Zscale(d.lod))
-                 d3.selectAll("#eqtltip").remove()
+                 svg.selectAll("#eqtltip").remove()
              .on "click", (d) ->
                  d3.json("data/probe_data/probe#{d.probe}.json", draw_probe)
 
