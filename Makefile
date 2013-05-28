@@ -24,25 +24,24 @@ presentation.html: index.html js css/kbroman_talk.css css/kbroman_presentation.c
 	Perl/create_presentation.pl
 
 webmain:
-	scp index.html presentation.html broman-2:public_html/presentations/InteractiveGraphs2/
+	scp index.html presentation.html broman-2:public_html/presentations/CTC2013/
 
 webcss:
-	scp css/*.css broman-2:public_html/presentations/InteractiveGraphs2/css/
+	scp css/*.css broman-2:public_html/presentations/CTC2013/css/
 
 webcode:
-	scp js/*.js broman-2:public_html/presentations/InteractiveGraphs2/js/
-	scp coffee/*.coffee broman-2:public_html/presentations/InteractiveGraphs2/coffee/
+	scp js/*.js broman-2:public_html/presentations/CTC2013/js/
+	scp coffee/*.coffee broman-2:public_html/presentations/CTC2013/coffee/
 
 webdata:
-	scp data/hypo.json data/insulinlod.json broman-2:public_html/presentations/InteractiveGraphs2/data/
+	scp data/hypo.json data/insulinlod.json broman-2:public_html/presentations/CTC2013/data/
 
 webfigs:
-	scp figs/*.png broman-2:public_html/presentations/InteractiveGraphs2/figs/
-	scp figs/*.jpg broman-2:public_html/presentations/InteractiveGraphs2/figs/
+	scp figs/*.png broman-2:public_html/presentations/CTC2013/figs/
 
-web: webmain webcss webcode webfigs webdata
+web: webmain webcss webcode webfigs webdata all
 
 tar: mainstuff
-	cd ..;tar czvf InteractiveGraphs2.tgz InteractiveGraphs2/*.html InteractiveGraphs2/css InteractiveGraphs2/coffee InteractiveGraphs2/js InteractiveGraphs2/data InteractiveGraphs2/figs;mv InteractiveGraphs2.tgz InteractiveGraphs2/
+	cd ..;tar czvf CTC2013.tgz CTC2013/*.html CTC2013/css CTC2013/coffee CTC2013/js CTC2013/data CTC2013/figs;mv CTC2013.tgz CTC2013/
 
 all: js web presentation.html tar
