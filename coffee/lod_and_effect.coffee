@@ -62,7 +62,7 @@ draw = (data) ->
   titlecolor = "Wheat"
   lightGray = d3.rgb(200, 200, 200)
   darkGray = d3.rgb(170, 170, 170)
-  pink = "#E9CFEC"
+  pink = "#F9DFFC"
   purple = "#8C4374"
 
   # create SVGs
