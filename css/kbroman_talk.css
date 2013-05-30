@@ -307,3 +307,12 @@ ul ul.nodash li:before {
 svg line {
   shape-rendering: crispEdges;
 }
+
+text#corrtext {
+  font-size: 30px;
+  pointer-events: none;
+}
+
+text.corrlabel {
+  font-size: 24px;
+}

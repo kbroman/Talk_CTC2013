@@ -9,10 +9,11 @@ d3.json "data/corr_w_scatter.json", (data) ->
   h = 450
   w = h
   pad = {left:70, top:40, right:15, bottom: 70}
+  extraPad = 70
   innerPad = 5
 
   totalh = h + pad.top + pad.bottom
-  totalw = (w + pad.left + pad.right)*2
+  totalw = (w + pad.left + pad.right)*2 + extraPad
 
   svg = d3.select("div#corr_w_scatter")
           .append("svg")
@@ -22,12 +23,12 @@ d3.json "data/corr_w_scatter.json", (data) ->
   # panel for correlation image
   corrplot = svg.append("g")
                .attr("id", "corrplot")
-               .attr("transform", "translate(#{pad.left},#{pad.top})")
+               .attr("transform", "translate(#{pad.left+extraPad},#{pad.top})")
 
   # panel for scatterplot
   scatterplot = svg.append("g")
                    .attr("id", "scatterplot")
-                   .attr("transform", "translate(#{pad.left*2+pad.right+w},#{pad.top})")
+                   .attr("transform", "translate(#{pad.left*2+pad.right+w+extraPad},#{pad.top})")
 
   # no. data points
   nind = data.ind.length
@@ -69,7 +70,9 @@ d3.json "data/corr_w_scatter.json", (data) ->
                              corYscale(d.row) + (mult + 0.35) * 20)
                          .attr("fill", "black")
                          .attr("dominant-baseline", "middle")
-                         .attr("text-anchor", "middle")
+                         .attr("text-anchor", ->
+                             return "start" if d.col < nvar/2
+                             "end")
                  corrplot.append("text").attr("class","corrlabel")
                          .attr("x", corXscale(d.col))
                          .attr("y", h+pad.bottom*0.2)
