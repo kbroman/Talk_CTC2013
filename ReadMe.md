@@ -11,29 +11,10 @@ differences.
 
 <hr/>
 
-<p xmlns:dct="http://purl.org/dc/terms/"
-xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
-                 To the extent possible under law,
-                   <a rel="dct:publisher"
-                        href="https://github.com/kbroman/Talk_CTC2013">
-                            <span property="dct:title">Karl
-                            Broman</span></a>
-                              has waived all copyright and related or
-                              neighboring rights to
-                                <span property="dct:title">&ldquo;Interactive
-                                graphics for high-dimensional genetic
-                                data&rdquo;</span>.
-                                This work is published from:
-                                <span property="vcard:Country"
-                                datatype="dct:ISO3166"
-                                      content="US"
-                                      about="https://github.com/kbroman/Talk_CTC2013">
-                                        United States</span>.
+To the extent possible under law,
+[Karl Broman](https://github.com/kbroman)
+has waived all copyright and related or neighboring rights to
+&ldquo;[Interactive graphics for high-dimensional genetic data](https://github.com/kbroman/Talk_CTC2013)&rdquo;.
+This work is published from the United States.
 <br/>
-  <a rel="license"
-       href="http://creativecommons.org/publicdomain/zero/1.0/">
-           <img
-           src="http://i.creativecommons.org/p/zero/1.0/88x31.png"
-           style="border-style: none;" alt="CC0" />
-             </a>
-                                        </p>
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
